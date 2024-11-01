@@ -1,0 +1,101 @@
+#!/usr/bin/env python
+
+import sys
+import hashlib
+import re
+
+seq = sys.stdin.read()
+patern = r'^>.*$'
+filtered_seq = re.sub(patern, '', seq, flags=re.MULTILINE)
+filtered_seq = filtered_seq.lower().strip('\n').replace('\n','')
+# print(filtered_seq) #visual control
+# print(len(filtered_seq))
+
+a_count = 0
+l_count = 0
+m_count = 0
+f_count = 0
+w_count = 0
+k_count = 0
+q_count = 0
+e_count = 0
+s_count = 0
+p_count = 0
+v_count = 0
+i_count = 0
+c_count = 0
+y_count = 0
+h_count = 0
+r_count = 0
+n_count = 0
+d_count = 0
+t_count = 0
+length = 0
+
+for symbol in filtered_seq:
+	# if symbol.upper() in ('A','C','G','T'):
+	# 	length += 1
+	match symbol.upper():
+		case 'A':
+			a_count += 1
+		case 'L':
+		    l_count += 1
+		case 'M':
+		    m_count += 1
+		case 'F':
+		    f_count += 1
+		case 'W':
+		    w_count += 1
+		case 'K':
+		    k_count += 1
+		case 'Q':
+		    q_count += 1
+		case 'E':
+		    e_count += 1
+		case 'S':
+		    s_count += 1
+		case 'P':
+		    p_count += 1
+		case 'V':
+		    v_count += 1
+		case 'I':
+		    i_count += 1
+		case 'C':
+		    c_count += 1
+		case 'Y':
+		    y_count += 1
+		case 'H':
+		    h_count += 1
+		case 'R':
+		    r_count += 1
+		case 'N':
+		    n_count += 1
+		case 'D':
+		    d_count += 1
+		case 'T':
+		    t_count += 1
+
+length = len(filtered_seq)
+print(f'Sequence length: {length}')
+print(f'A fraction = {a_count/length:.3}')
+print(f'L fraction = {l_count/length:.3}')
+print(f'M fraction = {m_count/length:.3}')
+print(f'F fraction = {f_count/length:.3}')
+print(f'W fraction = {w_count/length:.3}')
+print(f'K fraction = {k_count/length:.3}')
+print(f'Q fraction = {q_count/length:.3}')
+print(f'E fraction = {e_count/length:.3}')
+print(f'S fraction = {s_count/length:.3}')
+print(f'P fraction = {p_count/length:.3}')
+print(f'V fraction = {v_count/length:.3}')
+print(f'I fraction = {i_count/length:.3}')
+print(f'C fraction = {c_count/length:.3}')
+print(f'Y fraction = {y_count/length:.3}')
+print(f'H fraction = {h_count/length:.3}')
+print(f'R fraction = {r_count/length:.3}')
+print(f'N fraction = {n_count/length:.3}')
+print(f'D fraction = {d_count/length:.3}')
+print(f'T fraction = {t_count/length:.3}')
+
+# print(f'Sum of fractions: {a_count/length+c_count/length+g_count/length+t_count/length}')
+print(f'Hash: {hashlib.md5(filtered_seq.lower().encode()).hexdigest()}')
