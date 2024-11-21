@@ -9,3 +9,5 @@ In this repo, you will find code files that solve commod tasks when working with
 -    get\_region: This file extracts a segment from the sequence according to provided arguments. Unlike Python indexing, it starts from 1 and includes both boundaries.
 
 -    translate: This file reads the sequence and prepares three sets of triplets. This is necessary because we don’t know the starting position of the translation. These sets are then translated according to the genetic code.
+
+-	paired_srr_download: This script downloads fastq files from SRR database. It uses **	SRA toolkit** fastq-dump.
